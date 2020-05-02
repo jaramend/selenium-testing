@@ -6,8 +6,8 @@ import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
 
 /**
- * Classe permettant d'exécuter du code selon le résultat de chaque test. Ici,
- * permet de logger le résultat de chaque méthode de test
+ * Class allowing to execute code according to the result of each test. Here,
+ * allows to log the result of each test method
  * 
  * @author jaramend
  *

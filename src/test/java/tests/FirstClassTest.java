@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import base.BaseTest;
 
 /**
- * Première classe de tests
+ * First class of tests
  * 
  * @author jaramend
  *
@@ -13,9 +13,9 @@ import base.BaseTest;
 public class FirstClassTest extends BaseTest {
 
 	/**
-	 * Premier test
+	 * First test
 	 */
-	@Test(description = "Description du test", groups = { "group1" })
+	@Test(description = "Test description", groups = { "group1" })
 	public void testOne() {
 		/**
 		 * Test code
@@ -25,7 +25,7 @@ public class FirstClassTest extends BaseTest {
 	/**
 	 * Second test
 	 */
-	@Test(description = "Description du test", groups = { "group1" })
+	@Test(description = "Test description", groups = { "group1" })
 	public void testTwo() {
 		/**
 		 * Test code

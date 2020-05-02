@@ -13,7 +13,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import exception.NoBrowserException;
 
 /**
- * Classe de gestion du webdriver
+ * Webdriver management class
  * 
  * @author jaramend
  *

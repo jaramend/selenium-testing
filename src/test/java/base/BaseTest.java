@@ -18,8 +18,8 @@ import com.aventstack.extentreports.testng.listener.ExtentITestListenerClassAdap
 import exception.NoBrowserException;
 
 /**
- * Classe abstraite dont héritent toutes les classes de test. Permet
- * d'initialiser le webdriver en mode remote avec Selenium Grid
+ * Abstract class from which all test classes inherit. Allows you to initialize
+ * the webdriver in remote mode with Selenium Grid
  * 
  * @author jaramend
  *
@@ -27,11 +27,10 @@ import exception.NoBrowserException;
 @Listeners(ExtentITestListenerClassAdapter.class)
 public abstract class BaseTest {
 
-	protected Properties props = getProps("test.properties");
 	protected static WebDriver driver;
-	private String baseUrl;
-	private String remoteGridUrl;
-	private String browser;
+	private String baseUrl = getProps("test.properties").getProperty("BASE_URL");
+	private String remoteGridUrl = getProps("test.properties").getProperty("REMOTE_GRID");
+	private String browser = getProps("test.properties").getProperty("BROWSER");
 
 	private static final Logger logger = LogManager.getLogger(BaseTest.class);
 
@@ -43,20 +42,16 @@ public abstract class BaseTest {
 	}
 
 	/**
-	 * Initialisation de la configuration provenant du fichier test.properties
+	 * Initialization of the configuration from the test.properties file
 	 */
 	@BeforeSuite(alwaysRun = true)
 	public void startSuite() {
-		this.baseUrl = this.props.getProperty("BASE_URL");
-		this.remoteGridUrl = this.props.getProperty("REMOTE_GRID");
-		this.browser = this.props.getProperty("BROWSER");
 		logger.info("Using application on {}", this.baseUrl);
 		logger.info("Using {} browser", this.browser);
 	}
 
 	/**
-	 * Initialisation et démarrage du webdriver. S'exécute avant chaque méthode de
-	 * test
+	 * Initialization and start of the webdriver. Runs before each test method
 	 * 
 	 * @throws MalformedURLException
 	 * @throws NoBrowserException
@@ -78,7 +73,7 @@ public abstract class BaseTest {
 	}
 
 	/**
-	 * Arrêt et destruction du webdriver. S'exécute après chaque méthode de test
+	 * Webdriver shutdown and destruction. Runs after each test method
 	 */
 	@AfterMethod(alwaysRun = true)
 	public void stopBrowser() {

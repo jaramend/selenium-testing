@@ -6,10 +6,10 @@
     <listener class-name="base.CustomListener" />
   </listeners>
   
-  <!-- Déclaration du test avec preserve-order pour exécuter les méthodes dans l'ordre indiqué -->
+  <!-- Declaration of the test with preserve-order to execute the methods in the indicated order -->
   <test name="test-name" preserve-order="true">
   
-    <!-- Déclaration obligatoire des groupes utilisés -->
+    <!-- Mandatory declaration of the groups used -->
     <groups>
       <run>
         <include name="group1" />
@@ -17,7 +17,7 @@
       </run>
     </groups>
     
-    <!-- Déclaration et ordonnancement des tests à exécuter -->
+    <!-- Declaration and scheduling of tests to be performed -->
     <classes>
       <class name="tests.FirstClassTest">
         <methods>
