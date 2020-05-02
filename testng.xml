@@ -1,0 +1,37 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+  
+<suite name="suite-name" verbose="1">
+
+  <listeners>
+    <listener class-name="base.CustomListener" />
+  </listeners>
+  
+  <!-- Déclaration du test avec preserve-order pour exécuter les méthodes dans l'ordre indiqué -->
+  <test name="test-name" preserve-order="true">
+  
+    <!-- Déclaration obligatoire des groupes utilisés -->
+    <groups>
+      <run>
+        <include name="group1" />
+        <include name="group2" />
+      </run>
+    </groups>
+    
+    <!-- Déclaration et ordonnancement des tests à exécuter -->
+    <classes>
+      <class name="tests.FirstClassTest">
+        <methods>
+          <include name="testOne" />
+          <include name="testTwo" />
+        </methods>
+      </class>
+      <class name="tests.SecondClassTest">
+        <methods>
+          <include name="testOne" />
+          <include name="testTwo" />
+          <include name="testThree" />
+        </methods>
+      </class>
+    </classes>
+  </test>
+</suite>
