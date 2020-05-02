@@ -1,42 +1,45 @@
-# Guide d'utilisation du starter kit de test Selenium
+# Starter kit for Selenium Grid tests using Maven
 
 ## Requirements
 * Java 11
 * Maven 3.6
 
-## Principe
-Ce starter kit permet de créer un projet de test fonctionnels automatisés basés grâce à Selenium. Ces tests se reposent sur l'utilisation de Selenium Grid, présent sur les Production Lines.
-Selenium Grid est un service permettant d'utiliser des webdrivers distants, et évite ainsi l'installation de webdrivers en local.
-
-Le kit a été concu avec l'idée que les scénarios de test sont générés grâce à Selenium IDE.
-Selenium IDE est un plugin Chrome ou Firefox, permettant de scripter des scénarios fonctionnels d'après les actions effectuées dans le navigateur. Les scénarios sont ensuite exportables en code Java, qui peuvent être directement intégrés à ce projet.
-
-Le projet génère également un rapport de tests grâce à ExtentReports.
-
-## Installation
-Dans le pom.xml, modifier les informations suivantes pour s'accorder à votre projet :
-* groupId
-* artifactId
-* name
-
-## Utilisation
-### Configuration
-Editer le fichier **test.properties** afin d'indiquer les URL suivantes :
+## Used tools
+* TestNG
+* ExtentReports
+* Maven
 * Selenium Grid
-* Application à tester
 
-### Ajout de tests
-Des templates de tests sont présents dans le package **tests**, contenant des exemples d'utilisation des groupes de tests et des dépendances.
+## Description
+This starter kit allows you to create an automated functional test project based on Selenium. These tests are based on the use of Selenium Grid.
+Selenium Grid is a service allowing to use remote webdrivers, and thus avoids the installation of local webdrivers.
 
-Chaque classe de test doit extends la classe **BaseTest**, qui se charge d'effectuer les actions nécessaires avant et après les tests, notamment la gestion du RemoteWebDriver.
+The kit was designed with the idea that the test cases are generated using Selenium IDE.
+Selenium IDE is a Chrome or Firefox plugin, allowing to script functional scenarios according to the actions performed in the browser. The scenarios are then exportable in Java code, which can be directly integrated into this project.
 
-Les classes doivent obligatoirement avoir un nom se terminant par *Test* afin qu'ils soient reconnus par maven-surefire.
+The project also generates a test report using ExtentReports.
 
-Chaque nouveau test doit être déclaré dans le fichier **testng.xml** afin d'ordonnancer l'exécution des méthodes.
-Des groupes peuvent être créés afin de pouvoir conditionner l'exécution de certains groupes de tests à la réussite d'autres groupes.
+The launch and scheduling of tests is managed using TestNG.
 
-Lors de l'export de tests provenant de Selenium IDE, simplement copier/coller la méthode de test (sans les méthodes *@Before* et *@After*) dans votre classe de test.
+## Use
+### Configuration
+Edit the ** test.properties ** file to indicate the following information:
+* Selenium Grid URL
+* App to test URL
+* Browser to use (chrome or firefox)
 
-### Utilisation de TestNG
-L'exécution des tests est gérée par le module **TestNG**. Toute la documentation relative à son utilisation est disponible ici :
-[Documentation TestNG](https://testng.org/doc/documentation-main.html)
+### Add tests
+Test templates are present in the ** tests ** package, containing examples of the use of test groups and dependencies.
+
+Each test class must extend the ** BaseTest ** class, which is responsible for carrying out the necessary actions before and after the tests, in particular the management of the RemoteWebDriver.
+
+Classes must have a name ending with * Test * so that they are recognized by maven-surefire.
+
+Each new test must be declared in the file ** testng.xml ** in order to schedule the execution of the methods.
+Groups can be created in order to be able to condition the execution of certain groups of tests on the success of other groups.
+
+When exporting tests from Selenium IDE, simply copy / paste the test method (without the * @ Before * and * @ After * methods) into your test class.
+
+### Use of TestNG
+The execution of the tests is managed by the ** TestNG ** module. All the documentation relating to its use is available here:
+[TestNG documentation](https://testng.org/doc/documentation-main.html)
