@@ -23,23 +23,23 @@ The launch and scheduling of tests is managed using TestNG.
 
 ## Use
 ### Configuration
-Edit the ** test.properties ** file to indicate the following information:
+Edit the **test.properties** file to indicate the following information:
 * Selenium Grid URL
 * App to test URL
 * Browser to use (chrome or firefox)
 
 ### Add tests
-Test templates are present in the ** tests ** package, containing examples of the use of test groups and dependencies.
+Test templates are present in the **tests** package, containing examples of the use of test groups and dependencies.
 
-Each test class must extend the ** BaseTest ** class, which is responsible for carrying out the necessary actions before and after the tests, in particular the management of the RemoteWebDriver.
+Each test class must extend the **BaseTest** class, which is responsible for carrying out the necessary actions before and after the tests, in particular the management of the RemoteWebDriver.
 
-Classes must have a name ending with * Test * so that they are recognized by maven-surefire.
+Classes must have a name ending with *Test* so that they are recognized by maven-surefire.
 
-Each new test must be declared in the file ** testng.xml ** in order to schedule the execution of the methods.
+Each new test must be declared in the file **testng.xml** in order to schedule the execution of the methods.
 Groups can be created in order to be able to condition the execution of certain groups of tests on the success of other groups.
 
-When exporting tests from Selenium IDE, simply copy / paste the test method (without the * @ Before * and * @ After * methods) into your test class.
+When exporting tests from Selenium IDE, simply copy / paste the test method (without the *@Before* and *@After* methods) into your test class.
 
 ### Use of TestNG
-The execution of the tests is managed by the ** TestNG ** module. All the documentation relating to its use is available here:
+The execution of the tests is managed by the **TestNG** module. All the documentation relating to its use is available here:
 [TestNG documentation](https://testng.org/doc/documentation-main.html)
